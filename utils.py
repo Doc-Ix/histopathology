@@ -1,11 +1,6 @@
-
-
-
 def expand_dimension(x):
     import numpy as np
     return np.expand_dims(x,axis=0)
-
-
 
 
 def build_data_generators(IMAGE_SIZE, BATCH_SIZE, RESCALE, ImageDataGenerator, train_datagenerator):
@@ -26,8 +21,6 @@ def build_data_generators(IMAGE_SIZE, BATCH_SIZE, RESCALE, ImageDataGenerator, t
                                                                        class_mode='binary')
     
     return datagen_train, datagen_valid, datagen_test
-
-
 
 
 def create_df_test(path_to_label_0, path_to_label_1):
@@ -65,8 +58,6 @@ def create_df_test(path_to_label_0, path_to_label_1):
     return df_test
 
 
-
-
 def model_prediction_binary(prediction, threshold=0.5):
     if prediction > threshold:
         return 1
@@ -74,8 +65,3 @@ def model_prediction_binary(prediction, threshold=0.5):
         return 0
     else:
         print('Prediction Error! Value: {}'.format(prediction))
-
-
-
-
-
