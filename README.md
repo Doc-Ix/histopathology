@@ -16,19 +16,17 @@ In this repository you find the capstone project of my Machine Learning Nanodegr
 
 | File | Link | Description |
 | --- | --- | --- |
-|train.zip / train_labels.csv | [Link](https://www.kaggle.com/c/histopathologic-cancer-detection/data) | Original dataset and labels from kaggle challange |
-| weights.best.model_Xception_full.h5 | [Link](https://drive.google.com/file/d/16fvWFbsK1SUVJQ9b-NeTdfqrSV1ls4oD/view?usp=sharing) | Weights of best perfoming model, based on Xception |
-| test_data_lables_and_prediction_NASNetmobile_full.pkl | [Link](https://drive.google.com/file/d/10QSME9fMrpoq767RcBYVKroBWKFgRCZC/view?usp=sharing) | Data frame with the true labels of the testing set as well as the prediction results of NASNetmobile, stored as pickle file. |
-| test_data_lables_and_prediction_Xception_full.pkl | [Link](https://drive.google.com/file/d/14iIfZtPijTbpQx4cND7IEvmxChyupYzZ/view?usp=sharing) | Data frame with the true labels of the testing set as well as the prediction results of Xception, stored as pickle file. |
+|train.zip / train_labels.csv | Original dataset and labels from kaggle challange | [Link](https://www.kaggle.com/c/histopathologic-cancer-detection/data) | 
+| weights.best.model_Xception_full.h5 | Weights of best perfoming model, based on Xception | [Link](https://drive.google.com/file/d/16fvWFbsK1SUVJQ9b-NeTdfqrSV1ls4oD/view?usp=sharing) |
+| test_data_lables_and_prediction_NASNetmobile_full.pkl | Data frame with the true labels of the testing set as well as the prediction results of NASNetmobile, stored as pickle file. | [Link](https://drive.google.com/file/d/10QSME9fMrpoq767RcBYVKroBWKFgRCZC/view?usp=sharing) |
+| test_data_lables_and_prediction_Xception_full.pkl | Data frame with the true labels of the testing set as well as the prediction results of Xception, stored as pickle file. | [Link](https://drive.google.com/file/d/14iIfZtPijTbpQx4cND7IEvmxChyupYzZ/view?usp=sharing) |
 
-- Folder 'data frames' containing data frames with the true labels of the testing set as well as the prediction results of the two models used. The data frames are store as pickle files.
-
-## Downloads
 
 ## Enviroment
 [Create a new Anaconda environment from file](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file).
 
 NAME: tensorflow_p36
+
 `conda env create -f environment.yml`
 
 ## Project Details
@@ -70,12 +68,12 @@ During training and validation, the images should be directly streamed from thei
 ### Model Building
 Building on pre-trained models in the Keras library and inspired by different blogs about this topic, the following model for training was chosen and implemented, based on a [blog post by Youness Mansar](https://towardsdatascience.com/metastasis-detection-using-cnns-transfer-learning-and-data-augmentation-684761347b59). The core of the network is the NASNetmobile model, since it is credited to be fast and still high performant in image recognition. Three parallel layers follow the core model, a global-max- pooling a global-average-pooling and a flatten layer. After that a dropout layer (rate=0.5) is installed and the final dense layer with a sigmoid activation function builds the end of the model. The resulting CNN has 4,281,333 parameters from which 4,244,595 were trainable in the configuration defined.
 
-![NASNetmobile](https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_NASNetmobile_full.png)
+![NASNetmobile](https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_NASNetmobile_full.png | width=400)
 *CNN for Histopathology Data Classification, building on NASNetmobile*
 
 As a second network, an Xception model was embedded in a model structure with a global- average-pooling layer and a dropout layer (rate=0.5) following the core model. The final layer is also a dense layer with a sigmoid activation function. With 20,809,001 trainable parameters (out of 20,863,529) the resulting model is much bigger then the NasNetmobile, however much closer to the standard library model.
 
-![Xception](https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png)
+![Xception](https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png | width=400)
 *CNN for Histopathology Data Classification, building on Xception*
 
 ### Training
@@ -106,6 +104,3 @@ This repository is under the [MIT License](https://choosealicense.com/licenses/m
 Komura, D., Ishikawa, S., Machine Learning Methods for Histopathological Image Analysis, Computational and Structural Biotechnology Journal, 16 (2018)
 
 B. S. Veeling, J. Linmans, J. Winkens, T. Cohen, M. Welling. "Rotation Equivariant CNNs for Digital Pathology", MICCAI (2018), arXiv:1806.03962
-
-
-https://drive.google.com/open?id=1ptHLjlXdwikzP0kmG7nvswMLJgTpqrsb
