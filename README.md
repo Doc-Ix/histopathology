@@ -51,14 +51,44 @@ The following two figures illustrate examples from the dataset labeled as non-ca
 
 
 ### Data Augmentation and Pipeline
+Although the dataset is quite large, an additional data augmentation was implemented. Using the Keras module, horizontal as well as vertical flips were implemented as well as rotations and zooms. Furthermore, shifts in height, width, channel as well as shear modulations were realized. To facilitate CNN training, all images were rescaled to values between 0 and 1.
+During training and validation, the images should be directly streamed from their corresponding folders, keeping their original size of 96x96 px. With a batch size of 200, data generators for training and validation were initialized. 
 
 ### Model Building
+Building on pre-trained models in the Keras library and inspired by different blogs about this topic, the following model for training was chosen and implemented, based on a [blog post by Youness Mansar](https://towardsdatascience.com/metastasis-detection-using-cnns-transfer-learning-and-data-augmentation-684761347b59). The core of the network is the NASNetmobile model, since it is credited to be fast and still high performant in image recognition. Three parallel layers follow the core model, a global-max- pooling a global-average-pooling and a flatten layer. After that a dropout layer (rate=0.5) is installed and the final dense layer with a sigmoid activation function builds the end of the model. The resulting CNN has 4,281,333 parameters from which 4,244,595 were trainable in the configuration defined.
+
+![NASNetmobile](https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_NASNetmobile_full.png)
+*CNN for Histopathology Data Classification, building on NASNetmobile*
+
+As a second network, an Xception model was embedded in a model structure with a global- average-pooling layer and a dropout layer (rate=0.5) following the core model. The final layer is also a dense layer with a sigmoid activation function. With 20,809,001 trainable parameters (out of 20,863,529) the resulting model is much bigger then the NasNetmobile, however much closer to the standard library model.
+
+![Xception](https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png)
+*CNN for Histopathology Data Classification, building on Xception*
+
+### Training
+The whole models were trained on an AWS EC2 p2.xlarge instance (Deep Learning AMI (Ubuntu) Version 23.1 (ami-0ab24eef0e14017ef). In a first attempt the data was stored with AWS S3, however it was hard to implement a stable streaming from S3 to the instance. In the end, the EC2 instance was provided with a larger EBS volume, in order to handle the large datasets and their processing. The training of the models was tracked and the configurations with the currently best validation results were automatically stored to dedicated folders as h5-files.
+
+For detailed training logs, please see the [jupyter notebook file]().
+
+### Testing
+In order to make predictions with the trained models, data frames with the paths to the single testing images and their corresponding labels were created. The predictions of the models were then added to a new column of the data frame and the data frames were stored as pickle files, after deleting unnecessary columns, in order to reduce file size. The data frames for the two models can be found in the dowloads section. After that the data frames were optimized for further processing and an additional column with a binary prediction value was added, using a threshold of 0.5.
 
 ### Results
 
+
+| Model | Sensitivity | Specitivity | False Positive Rate | ROC-AUC |
+| --- | --- | --- | --- | --- |
+| Building on NASNetmobile | 81.06 % | 90.22 % | 9.78 % | 0.937 |
+| Building on Xception | 83.23 % | 97.78 % | 2.22 % | 0.974 |
+
+The Xception network was able to reach the goal of the project, to build a binary image classifier for histopathologic cancer detecting, reaching an AUC-value above 0.95.
+
 ## License
 
+This repository is under the [MIT License](https://choosealicense.com/licenses/mit/).
+
 ## Acknowledgments
+
 
 Komura, D., Ishikawa, S., Machine Learning Methods for Histopathological Image Analysis, Computational and Structural Biotechnology Journal, 16 (2018)
 
