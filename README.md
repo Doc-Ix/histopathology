@@ -52,7 +52,6 @@ In the [conference paper, which presents the underlying PCam dataset](http://arx
 The original dataset from the kaggle challenge comes as a zip-folder, containing all image data as well as a csv-file with the corresponding labels. In total there are 220.025 single tiff-images, from which a dataframe was created and data was splitted in training/testing (80/20) and then in training/validation (80/20). The data was then stored in labeled folders for further processing. As a result, three folders with labeled subfolders were created, containing 140,816 training, 35,204 validation, and 44,005 testing images.
 
 ### Data Distribution and Sample Illustration
-Training and testing samples are splitted in the ratio 80 to 20 and the remaining 80% training samples were again splitted in a training and a validation set in the ratio 80 to 20.
 
 |   | Total | Positive  | Negative  | Ratio  |
 |---|---|---|---|---|
@@ -75,7 +74,7 @@ Although the dataset is quite large, an additional data augmentation was impleme
 During training and validation, the images should be directly streamed from their corresponding folders, keeping their original size of 96x96 px. With a batch size of 200, data generators for training and validation were initialized. 
 
 ### Model Building
-Building on pre-trained models in the Keras library and inspired by different blogs about this topic, the following model for training was chosen and implemented, based on a [blog post by Youness Mansar](https://towardsdatascience.com/metastasis-detection-using-cnns-transfer-learning-and-data-augmentation-684761347b59). The core of the network is the NASNetmobile model, since it is credited to be fast and still high performant in image recognition. Three parallel layers follow the core model, a global-max- pooling a global-average-pooling and a flatten layer. After that a dropout layer (rate=0.5) is installed and the final dense layer with a sigmoid activation function builds the end of the model. The resulting CNN has 4,281,333 parameters from which 4,244,595 were trainable in the configuration defined.<br>
+Building on pre-trained models in the Keras library and inspired by different blogs about this topic, the following model for training was chosen and implemented, based on a [blog post by Youness Mansar](https://towardsdatascience.com/metastasis-detection-using-cnns-transfer-learning-and-data-augmentation-684761347b59). The core of the network is the NASNetmobile model, since it is credited to be fast and still high performant in image recognition. Three parallel layers follow the core model, a global-max-pooling a global-average-pooling and a flatten layer. After that a dropout layer (rate=0.5) is installed and the final dense layer with a sigmoid activation function builds the end of the model. The resulting CNN has 4,281,333 parameters from which 4,244,595 were trainable in the configuration defined.<br>
 
 **CNN 1, building on NASNetmobile:**
 
