@@ -80,7 +80,7 @@ Building on pre-trained models in the Keras library and inspired by different bl
 
 <img src="https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_NASNetmobile_full.png">
 
-As a second network, an Xception model was embedded in a model structure with a global- average-pooling layer and a dropout layer (rate=0.5) following the core model. The final layer is also a dense layer with a sigmoid activation function. With 20,809,001 trainable parameters (out of 20,863,529) the resulting model is much bigger then the NasNetmobile, however much closer to the standard library model.<br>
+As a second network, an Xception model was embedded in a model structure with a global-average-pooling layer and a dropout layer (rate=0.5) following the core model. The final layer is also a dense layer with a sigmoid activation function. With 20,809,001 trainable parameters (out of 20,863,529) the resulting model is much bigger then the NasNetmobile, however much closer to the standard library model.<br>
 
 **CNN 2, building on Xception:**
 
@@ -88,12 +88,12 @@ As a second network, an Xception model was embedded in a model structure with a 
 
 
 ### Training
-The whole models were trained on an AWS EC2 p2.xlarge instance (Deep Learning AMI (Ubuntu) Version 23.1 (ami-0ab24eef0e14017ef). In a first attempt the data was stored with AWS S3, however it was hard to implement a stable streaming from S3 to the instance. In the end, the EC2 instance was provided with a larger EBS volume, in order to handle the large datasets and their processing. The training of the models was tracked and the configurations with the currently best validation results were automatically stored to dedicated folders as h5-files.
+The whole models were trained on an AWS EC2 p2.xlarge instance. In a first attempt the data was stored with AWS S3, however it was hard to implement a stable streaming from S3 to the instance. In the end, the EC2 instance was provided with a larger EBS volume, in order to handle the large datasets and their processing. The training of the models was tracked and the configurations with the currently best validation results were automatically stored to dedicated folders as h5-files.
 
 For detailed training logs, please see the [jupyter notebook file](https://github.com/Doc-Ix/histopathology/blob/master/Histo-App.ipynb).
 
 ### Testing
-In order to make predictions with the trained models, data frames with the paths to the single testing images and their corresponding labels were created. The predictions of the models were then added to a new column of the data frame and the data frames were stored as pickle files, after deleting unnecessary columns, in order to reduce file size. The data frames for the two models can be found in the downloads section. After that the data frames were optimized for further processing and an additional column with a binary prediction value was added, using a threshold of 0.5.
+In order to make predictions with the trained models, data frames with the paths to the single testing images and their corresponding labels were created. The predictions of the models were then added to a new column of the data frame and the data frames were stored as pickle files, after deleting unnecessary columns, in order to reduce file size. The data frames for the two models can be found in the [Downloads](#Downloads) section. After that the data frames were optimized for further processing and an additional column with a binary prediction value was added, using a threshold of 0.5.
 
 ### Results
 | Model | Sensitivity | Specitivity | False Positive Rate | ROC-AUC |
