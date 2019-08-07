@@ -5,11 +5,15 @@ Please feel free to use the files provided for further testing/training/processi
 
 <details><summary>Table of Contents</summary><p>
 
+* [Content of Repository & Downloads](#Content_Downloads)
 * [Enviroment](#Enviroment)
-* [Downloads](#Downloads)
+* [Project Details](#Project_Details)
+* [License](#License)
+* [Acknowledgments](#Acknowledgments)
 
 </p></details><p></p>
 
+<a id="Content_Downloads"></a>
 ## Content of Repository & Downloads
 
 - **Histo-App-Final.ipynb:** A jupyter notebook file with the main code of the project
@@ -25,7 +29,7 @@ The following files can be downloaded via google drive:<br>
 | test_data_lables_and_prediction_NASNetmobile_full.pkl | Data frame with the true labels of the testing set as well as the prediction results of NASNetmobile, stored as pickle file. | [Link](https://drive.google.com/file/d/10QSME9fMrpoq767RcBYVKroBWKFgRCZC/view?usp=sharing) |
 | test_data_lables_and_prediction_Xception_full.pkl | Data frame with the true labels of the testing set as well as the prediction results of Xception, stored as pickle file. | [Link](https://drive.google.com/file/d/14iIfZtPijTbpQx4cND7IEvmxChyupYzZ/view?usp=sharing) |
 
-
+<a id="Environment"></a>
 ## Enviroment
 [Create a new Anaconda environment from file](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file).
 
@@ -104,10 +108,11 @@ The Xception network was able to reach the goal of the project, to build a binar
 
 ![ROC-AUC_Xception](https://github.com/Doc-Ix/histopathology/blob/master/pictures/ROC_Xception_full.png)
 
-
+<a id="License"></a>
 ## License
 This repository is under the [MIT License](https://choosealicense.com/licenses/mit/).
 
+<a id="Acknowledgments"></a>
 ## Acknowledgments
 
 
