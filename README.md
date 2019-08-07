@@ -1,5 +1,5 @@
 # Histopathology
-In this repository you find the capstone project of my Machine Learning Nanodegree at Udacity. Based on the kaggle challenge [Histopathologic Cancer Detection - Identify metastatic tissue in histopathologic scans of lymph node sections](https://www.kaggle.com/c/histopathologic-cancer-detection/overview), the goal of this computer-vision project was an algorithm that is able to perform pathologic cancer detection. Using digital whole slide images (WSI) of lymph nodes sections as input, algorithms were trained to identify tumerous tissue in the center of the WSI provided. Please see [below](#Project_Details) for details.
+In this repository you find the capstone project of my Machine Learning Nanodegree at Udacity. Based on the kaggle challenge [Histopathologic Cancer Detection - Identify metastatic tissue in histopathologic scans of lymph node sections](https://www.kaggle.com/c/histopathologic-cancer-detection/overview), the goal of this computer-vision project was an algorithm that is able to perform pathologic cancer detection. Using digital whole slide images (WSI) of lymph nodes sections as input, algorithms were trained to identify tumerous tissue in the center of the WSI provided. Please see section [Project Details](#Project_Details) for further explanation.
 
 <details><summary>Table of Contents</summary><p>
 
@@ -14,9 +14,10 @@ In this repository you find the capstone project of my Machine Learning Nanodegr
 - utils.py: A python file with supplementary functions
 - environment.yml: Conda environment file
 
-| File | Link | Description |
+The following files can be downloaded via google drive:
+| File | Description | Link  |
 | --- | --- | --- |
-|train.zip / train_labels.csv | Original dataset and labels from kaggle challange | [Link](https://www.kaggle.com/c/histopathologic-cancer-detection/data) | 
+|train.zip, train_labels.csv | Original dataset and labels from kaggle challange | [Link](https://www.kaggle.com/c/histopathologic-cancer-detection/data) | 
 | weights.best.model_Xception_full.h5 | Weights of best perfoming model, based on Xception | [Link](https://drive.google.com/file/d/16fvWFbsK1SUVJQ9b-NeTdfqrSV1ls4oD/view?usp=sharing) |
 | test_data_lables_and_prediction_NASNetmobile_full.pkl | Data frame with the true labels of the testing set as well as the prediction results of NASNetmobile, stored as pickle file. | [Link](https://drive.google.com/file/d/10QSME9fMrpoq767RcBYVKroBWKFgRCZC/view?usp=sharing) |
 | test_data_lables_and_prediction_Xception_full.pkl | Data frame with the true labels of the testing set as well as the prediction results of Xception, stored as pickle file. | [Link](https://drive.google.com/file/d/14iIfZtPijTbpQx4cND7IEvmxChyupYzZ/view?usp=sharing) |
