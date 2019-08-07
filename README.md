@@ -15,6 +15,7 @@ In this repository you find the capstone project of my Machine Learning Nanodegr
 - **environment.yml:** Conda environment file
 
 The following files can be downloaded via google drive:<br>
+
 | File | Description | Link  |
 | --- | --- | --- |
 |train.zip, train_labels.csv | Original dataset and labels from kaggle challenge | [Link](https://www.kaggle.com/c/histopathologic-cancer-detection/data) |
