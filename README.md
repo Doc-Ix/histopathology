@@ -58,11 +58,12 @@ Training and testing samples are splitted in the ratio 80 to 20 and the remainin
 
 The following two figures illustrate examples from the dataset labeled as non-cancerous in the 30x30 px center and as cancerous in its center. For non-trained ordinary persons, it is hardly possible to identify any differences.
 
+**Sample images labeled non-cancerous:**
 ![Non-cancerous](https://github.com/Doc-Ix/histopathology/blob/master/pictures/Example_Images_label_0.png)
-*Sample images labeled non-cancerous*
 
+**Sample images labeled cancerous:**
 ![Cancerous](https://github.com/Doc-Ix/histopathology/blob/master/pictures/Example_Images_label_1.png)
-*Sample images labeled cancerous*
+
 
 
 ### Data Augmentation and Pipeline
@@ -71,13 +72,14 @@ During training and validation, the images should be directly streamed from thei
 
 ### Model Building
 Building on pre-trained models in the Keras library and inspired by different blogs about this topic, the following model for training was chosen and implemented, based on a [blog post by Youness Mansar](https://towardsdatascience.com/metastasis-detection-using-cnns-transfer-learning-and-data-augmentation-684761347b59). The core of the network is the NASNetmobile model, since it is credited to be fast and still high performant in image recognition. Three parallel layers follow the core model, a global-max- pooling a global-average-pooling and a flatten layer. After that a dropout layer (rate=0.5) is installed and the final dense layer with a sigmoid activation function builds the end of the model. The resulting CNN has 4,281,333 parameters from which 4,244,595 were trainable in the configuration defined.<br>
+
 **CNN 1, building on NASNetmobile:**
 
 <img src="https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_NASNetmobile_full.png">
 
 As a second network, an Xception model was embedded in a model structure with a global- average-pooling layer and a dropout layer (rate=0.5) following the core model. The final layer is also a dense layer with a sigmoid activation function. With 20,809,001 trainable parameters (out of 20,863,529) the resulting model is much bigger then the NasNetmobile, however much closer to the standard library model.<br>
-**CNN 2, building on Xception:**
 
+**CNN 2, building on Xception:**
 <img src="https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png" width="500">
 
 
