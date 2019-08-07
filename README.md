@@ -69,15 +69,15 @@ During training and validation, the images should be directly streamed from thei
 ### Model Building
 Building on pre-trained models in the Keras library and inspired by different blogs about this topic, the following model for training was chosen and implemented, based on a [blog post by Youness Mansar](https://towardsdatascience.com/metastasis-detection-using-cnns-transfer-learning-and-data-augmentation-684761347b59). The core of the network is the NASNetmobile model, since it is credited to be fast and still high performant in image recognition. Three parallel layers follow the core model, a global-max- pooling a global-average-pooling and a flatten layer. After that a dropout layer (rate=0.5) is installed and the final dense layer with a sigmoid activation function builds the end of the model. The resulting CNN has 4,281,333 parameters from which 4,244,595 were trainable in the configuration defined.
 
-![NASNetmobile](https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_NASNetmobile_full.png){:width="400px"}
+<img src="https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_NASNetmobile_full.png">
 *CNN for Histopathology Data Classification, building on NASNetmobile*
 
 As a second network, an Xception model was embedded in a model structure with a global- average-pooling layer and a dropout layer (rate=0.5) following the core model. The final layer is also a dense layer with a sigmoid activation function. With 20,809,001 trainable parameters (out of 20,863,529) the resulting model is much bigger then the NasNetmobile, however much closer to the standard library model.
 
-![Xception](https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png){:height="50%" width="50%"}
+
+<img src="https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png" width="500">
 *CNN for Histopathology Data Classification, building on Xception*
 
-<img src="https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png" width="100">
 
 ### Training
 The whole models were trained on an AWS EC2 p2.xlarge instance (Deep Learning AMI (Ubuntu) Version 23.1 (ami-0ab24eef0e14017ef). In a first attempt the data was stored with AWS S3, however it was hard to implement a stable streaming from S3 to the instance. In the end, the EC2 instance was provided with a larger EBS volume, in order to handle the large datasets and their processing. The training of the models was tracked and the configurations with the currently best validation results were automatically stored to dedicated folders as h5-files.
