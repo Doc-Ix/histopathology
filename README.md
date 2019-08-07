@@ -1,8 +1,5 @@
 # Histopathology
-This repositiory contains all files of my Based on Kaggle Challenge [Histopathologic Cancer Detection - Identify metastatic tissue in histopathologic scans of lymph node sections](https://www.kaggle.com/c/histopathologic-cancer-detection/overview)
-
-
-
+In this repository you find the capstone project of my Machine Learning Nanodegree at Udacity. Based on the kaggle challenge [Histopathologic Cancer Detection - Identify metastatic tissue in histopathologic scans of lymph node sections](https://www.kaggle.com/c/histopathologic-cancer-detection/overview), the goal of this computer-vision project was an algorithm that is able to perform pathologic cancer detection. Using digital whole slide images (WSI) of lymph nodes sections as input, algorithms were trained to identify tumerous tissue in the center of the WSI provided. Please see [below](#Project_Details) for details.
 
 <details><summary>Table of Contents</summary><p>
 
@@ -11,15 +8,28 @@ This repositiory contains all files of my Based on Kaggle Challenge [Histopathol
 
 </p></details><p></p>
 
+## Content of Repository & Downloads
 
+- Histo-App-Final.ipynb: A jupyter notebook file with the main code of the project
+- utils.py: A python file with supplementary functions
+- environment.yml: Conda environment file
 
+| File | Link | Description |
+| --- | --- | --- |
+|train.zip / train_labels.csv | [Link](https://www.kaggle.com/c/histopathologic-cancer-detection/data) | Original dataset and labels from kaggle challange |
+| weights.best.model_Xception_full.h5 | [Link](https://drive.google.com/file/d/16fvWFbsK1SUVJQ9b-NeTdfqrSV1ls4oD/view?usp=sharing) | Weights of best perfoming model, based on Xception |
+| test_data_lables_and_prediction_NASNetmobile_full.pkl | [Link](https://drive.google.com/file/d/10QSME9fMrpoq767RcBYVKroBWKFgRCZC/view?usp=sharing) | Data frame with the true labels of the testing set as well as the prediction results of NASNetmobile, stored as pickle file. |
+| test_data_lables_and_prediction_Xception_full.pkl | [Link](https://drive.google.com/file/d/14iIfZtPijTbpQx4cND7IEvmxChyupYzZ/view?usp=sharing) | Data frame with the true labels of the testing set as well as the prediction results of Xception, stored as pickle file. |
 
-## Enviroment
-[Create a new Anaconda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) with the necessary dependencies.
-
-`conda env create -f environment.yml`
+- Folder 'data frames' containing data frames with the true labels of the testing set as well as the prediction results of the two models used. The data frames are store as pickle files.
 
 ## Downloads
+
+## Enviroment
+[Create a new Anaconda environment from file](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file).
+
+NAME: tensorflow_p36
+`conda env create -f environment.yml`
 
 ## Project Details
 
