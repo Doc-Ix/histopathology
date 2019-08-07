@@ -10,16 +10,14 @@ In this repository you find the capstone project of my Machine Learning Nanodegr
 
 ## Content of Repository & Downloads
 
-- Histo-App-Final.ipynb: A jupyter notebook file with the main code of the project
-- utils.py: A python file with supplementary functions
-- environment.yml: Conda environment file
+- **Histo-App-Final.ipynb:** A jupyter notebook file with the main code of the project
+- **utils.py:** A python file with supplementary functions
+- **environment.yml:** Conda environment file
 
-The following files can be downloaded via google drive:
-
-
+The following files can be downloaded via google drive:<br>
 | File | Description | Link  |
 | --- | --- | --- |
-|train.zip, train_labels.csv | Original dataset and labels from kaggle challange | [Link](https://www.kaggle.com/c/histopathologic-cancer-detection/data) |
+|train.zip, train_labels.csv | Original dataset and labels from kaggle challenge | [Link](https://www.kaggle.com/c/histopathologic-cancer-detection/data) |
 | weights.best.model_Xception_full.h5 | Weights of best perfoming model, based on Xception | [Link](https://drive.google.com/file/d/16fvWFbsK1SUVJQ9b-NeTdfqrSV1ls4oD/view?usp=sharing) |
 | test_data_lables_and_prediction_NASNetmobile_full.pkl | Data frame with the true labels of the testing set as well as the prediction results of NASNetmobile, stored as pickle file. | [Link](https://drive.google.com/file/d/10QSME9fMrpoq767RcBYVKroBWKFgRCZC/view?usp=sharing) |
 | test_data_lables_and_prediction_Xception_full.pkl | Data frame with the true labels of the testing set as well as the prediction results of Xception, stored as pickle file. | [Link](https://drive.google.com/file/d/14iIfZtPijTbpQx4cND7IEvmxChyupYzZ/view?usp=sharing) |
@@ -28,8 +26,7 @@ The following files can be downloaded via google drive:
 ## Enviroment
 [Create a new Anaconda environment from file](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file).
 
-NAME: tensorflow_p36
-
+NAME: tensorflow_p36<br>
 `conda env create -f environment.yml`
 
 ## Project Details
