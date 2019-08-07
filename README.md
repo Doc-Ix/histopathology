@@ -33,7 +33,7 @@ In the [conference paper, which presents the underlying PCam dataset](http://arx
 The original dataset from the kaggle challenge comes as a zip-folder, containing all image data as well as a csv-file with the corresponding labels. In total there are 220.025 single tiff-images, from which a dataframe was created and data was splitted in training/testing (80/20) and then in training/validation (80/20). The data was then stored in labeled folders for further processing. As a result, three folders with labeled subfolders were created, containing 140,816 training, 35,204 validation, and 44,005 testing images.
 
 ### Data Distribution and Sample Illustration
-Training and testing samples are splited in the ratio 80 to 20 and the remaining 80% training samples were again splited in a training and a validation set in the ratio 80 to 20.
+Training and testing samples are splitted in the ratio 80 to 20 and the remaining 80% training samples were again splitted in a training and a validation set in the ratio 80 to 20.
 
 |   | Total | Positive  | Negative  | Ratio  |
 |---|---|---|---|---|
@@ -45,6 +45,9 @@ The following two figures illustrate examples from the dataset labeled as non-ca
 
 ![Non-cancerous](https://github.com/Doc-Ix/histopathology/blob/master/pictures/Example_Images_label_0.png)
 *Sample images labeled non-cancerous*
+
+![Cancerous](https://github.com/Doc-Ix/histopathology/blob/master/pictures/Example_Images_label_1.png)
+*Sample images labeled cancerous*
 
 
 ### Data Augmentation and Pipeline
