@@ -77,6 +77,8 @@ As a second network, an Xception model was embedded in a model structure with a 
 ![Xception](https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png){:height="50%" width="50%"}
 *CNN for Histopathology Data Classification, building on Xception*
 
+<img src="https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png" width="100">
+
 ### Training
 The whole models were trained on an AWS EC2 p2.xlarge instance (Deep Learning AMI (Ubuntu) Version 23.1 (ami-0ab24eef0e14017ef). In a first attempt the data was stored with AWS S3, however it was hard to implement a stable streaming from S3 to the instance. In the end, the EC2 instance was provided with a larger EBS volume, in order to handle the large datasets and their processing. The training of the models was tracked and the configurations with the currently best validation results were automatically stored to dedicated folders as h5-files.
 
