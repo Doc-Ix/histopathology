@@ -74,7 +74,7 @@ Building on pre-trained models in the Keras library and inspired by different bl
 
 As a second network, an Xception model was embedded in a model structure with a global- average-pooling layer and a dropout layer (rate=0.5) following the core model. The final layer is also a dense layer with a sigmoid activation function. With 20,809,001 trainable parameters (out of 20,863,529) the resulting model is much bigger then the NasNetmobile, however much closer to the standard library model.
 
-![Xception](https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png | width=400)
+![Xception](https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png){:height="50%" width="50%"}
 *CNN for Histopathology Data Classification, building on Xception*
 
 ### Training
