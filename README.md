@@ -36,11 +36,16 @@ The original dataset from the kaggle challenge comes as a zip-folder, containing
 Training and testing samples are splited in the ratio 80 to 20 and the remaining 80% training samples were again splited in a training and a validation set in the ratio 80 to 20.
 
 |   | Total | Positive  | Negative  | Ratio  |
+|---|---|---|---|---|
 | Training | 140,816 | 57,035 | 83,781 | approx. 40/60 |
 | Validation | 35,204 | 14,259 | 20,945 | approx. 40/60 |
 | Test | 44,005 | 17,823 | 26,182 | approx. 40/60 |
 
 The following two figures illustrate examples from the dataset labeled as non-cancerous in the 30x30 px center and as cancerous in its center. For non-trained ordinary persons, it is hardly possible to identify any differences.
+
+![Non-cancerous](https://github.com/Doc-Ix/histopathology/blob/master/pictures/Example_Images_label_0.png)
+*Sample images labeled non-cancerous*
+
 
 ### Data Augmentation and Pipeline
 
