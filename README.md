@@ -98,10 +98,10 @@ In order to make predictions with the trained models, data frames with the paths
 ### Results
 | Model | Sensitivity | Specitivity | False Positive Rate | ROC-AUC |
 | --- | --- | --- | --- | --- |
-| Building on NASNetmobile | 81.06 % | 90.22 % | 9.78 % | 0.937 |
-| Building on Xception | 83.23 % | 97.78 % | 2.22 % | 0.974 |
+| CNN 1, building on NASNetmobile | 81.06 % | 90.22 % | 9.78 % | 0.937 |
+| CNN 2, building on Xception | 83.23 % | 97.78 % | 2.22 % | 0.974 |
 
-The Xception network was able to reach the goal of the project, to build a binary image classifier for histopathologic cancer detecting, reaching an AUC-value above 0.95.
+With an ROC-AUC score of 0.974 the CNN 2 model was able to reach the goal of the project, to build a binary image classifier for histopathologic cancer detecting, reaching an ROC-AUC value above 0.95.
 
 **Plot of ROC-AUC for Xception model:**
 
@@ -113,6 +113,6 @@ This repository is under the [MIT License](https://choosealicense.com/licenses/m
 
 <a id="Acknowledgments"></a>
 ## Acknowledgments
-* The dataset of this project was provided by Bas Veeling, with additional input from Babak Ehteshami Bejnordi, Geert Litjens, and Jeroen van der Laak.
+* The dataset of this project was provided by kaggle, building on the dataset of Bas Veeling, with additional input from Babak Ehteshami Bejnordi, Geert Litjens, and Jeroen van der Laak.
 
 * Thanks to kaggle for hosting this challenge
