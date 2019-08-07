@@ -114,8 +114,6 @@ This repository is under the [MIT License](https://choosealicense.com/licenses/m
 
 <a id="Acknowledgments"></a>
 ## Acknowledgments
+* The dataset of this project was provided by Bas Veeling, with additional input from Babak Ehteshami Bejnordi, Geert Litjens, and Jeroen van der Laak.
 
-
-Komura, D., Ishikawa, S., Machine Learning Methods for Histopathological Image Analysis, Computational and Structural Biotechnology Journal, 16 (2018)
-
-B. S. Veeling, J. Linmans, J. Winkens, T. Cohen, M. Welling. "Rotation Equivariant CNNs for Digital Pathology", MICCAI (2018), arXiv:1806.03962
+* Thanks to kaggle for hosting this challenge
