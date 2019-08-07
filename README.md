@@ -80,6 +80,7 @@ Building on pre-trained models in the Keras library and inspired by different bl
 As a second network, an Xception model was embedded in a model structure with a global- average-pooling layer and a dropout layer (rate=0.5) following the core model. The final layer is also a dense layer with a sigmoid activation function. With 20,809,001 trainable parameters (out of 20,863,529) the resulting model is much bigger then the NasNetmobile, however much closer to the standard library model.<br>
 
 **CNN 2, building on Xception:**
+
 <img src="https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png" width="500">
 
 
@@ -99,8 +100,10 @@ In order to make predictions with the trained models, data frames with the paths
 
 The Xception network was able to reach the goal of the project, to build a binary image classifier for histopathologic cancer detecting, reaching an AUC-value above 0.95.
 
+**Plot of ROC-AUC for Xception model:**
+
 ![ROC-AUC_Xception](https://github.com/Doc-Ix/histopathology/blob/master/pictures/ROC_Xception_full.png)
-*Plot of ROC-AUC for Xception model*
+
 
 ## License
 This repository is under the [MIT License](https://choosealicense.com/licenses/mit/).
