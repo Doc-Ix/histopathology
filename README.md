@@ -85,7 +85,7 @@ As a second network, an Xception model was embedded in a model structure with a 
 
 **CNN 2, building on Xception:**
 
-<img src="https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png" width="500">
+<img src="https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png" width="400">
 
 
 ### Training
