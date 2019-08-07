@@ -1,7 +1,7 @@
 # Histopathology
-In this repository you find the capstone project of my Machine Learning Nanodegree at Udacity. Based on the kaggle challenge [Histopathologic Cancer Detection - Identify metastatic tissue in histopathologic scans of lymph node sections](https://www.kaggle.com/c/histopathologic-cancer-detection/overview), the goal of this computer-vision project was an algorithm that is able to perform pathologic cancer detection. Using digital whole slide images (WSI) of lymph nodes sections as input, algorithms were trained to identify tumerous tissue in the center of the WSI provided. Please see section [Project Details](#Project_Details) for further explanation.
+In this repository you find the capstone project of my Machine Learning Nanodegree at Udacity. Based on the kaggle challenge [Histopathologic Cancer Detection - Identify metastatic tissue in histopathologic scans of lymph node sections](https://www.kaggle.com/c/histopathologic-cancer-detection/overview), the goal of this computer-vision project was an algorithm that is able to perform pathologic cancer detection. Using digital whole slide images (WSI) of lymph nodes sections as input, algorithms were trained to identify tumerous tissue in the center of the WSI provided. The best CNN, based on a Xception network, received a ROC-AUC score of 0.974 on the testing set. Please see section [Project Details](#Project_Details) for further explanation.
 
-Feel free to use the files provided for further testing/training/processing.
+Please feel free to use the files provided for further testing/training/processing and experimentation. :smiley:
 
 <details><summary>Table of Contents</summary><p>
 
