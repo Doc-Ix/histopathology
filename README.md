@@ -4,6 +4,14 @@ Based on Kaggle Challenge: Histopathologic Cancer Detection
 
 
 
+<details><summary>Table of Contents</summary><p>
+
+* [Enviroment](#Enviroment)
+* [Downloads](#Downloads)
+
+</p></details><p></p>
+
+
 
 
 ## Enviroment
