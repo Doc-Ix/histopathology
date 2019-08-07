@@ -1,6 +1,8 @@
 # Histopathology
 In this repository you find the capstone project of my Machine Learning Nanodegree at Udacity. Based on the kaggle challenge [Histopathologic Cancer Detection - Identify metastatic tissue in histopathologic scans of lymph node sections](https://www.kaggle.com/c/histopathologic-cancer-detection/overview), the goal of this computer-vision project was an algorithm that is able to perform pathologic cancer detection. Using digital whole slide images (WSI) of lymph nodes sections as input, algorithms were trained to identify tumerous tissue in the center of the WSI provided. Please see section [Project Details](#Project_Details) for further explanation.
 
+Feel free to use the files provided for further testing/training/processing.
+
 <details><summary>Table of Contents</summary><p>
 
 * [Enviroment](#Enviroment)
@@ -30,7 +32,7 @@ The following files can be downloaded via google drive:<br>
 NAME: tensorflow_p36<br>
 `conda env create -f environment.yml`
 
-## Project Details
+## Project Details(#Project_Details)
 
 ### Datasets and Inputs
 The dataset was provided in the kaggle challenge [Histopathologic Cancer Detection - Identify metastatic tissue in histopathologic scans of lymph node sections](https://www.kaggle.com/c/histopathologic-cancer-detection/overview). Based on the [PatchCamelyon (PCam) benchmark dataset](https://github.com/basveeling/pcam), the data for the competition was slightly modified. Due to probabilistic sampling, the original dataset contained duplicates that were removed in the Kaggle dataset. The dataset itself contains a very large number of small histopathologic WSIs for classification, taken from lymph node sections. Every file is labeled with an id, and a csv-file provides the information for all image-ids, weather there is at least one cell with tumor tissue in the inner image region or not. If the label is positive, at least one cell in the 32x32px center of the picture is with tumor tissue. The outer region does not influence the label, it was provided to enable fully-convolutional models that do not use zero-padding. For the project the dataset will be used to train, validate and test an algorithm for detecting metastatic tissue in the center of WSIs. Each file is 96x96px large with three color channels each.
@@ -76,7 +78,7 @@ As a second network, an Xception model was embedded in a model structure with a 
 
 
 <img src="https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png" width="500">
-<br>*CNN for Histopathology Data Classification, building on Xception*
+*CNN for Histopathology Data Classification, building on Xception*
 
 
 ### Training
@@ -85,7 +87,7 @@ The whole models were trained on an AWS EC2 p2.xlarge instance (Deep Learning AM
 For detailed training logs, please see the [jupyter notebook file](https://github.com/Doc-Ix/histopathology/blob/master/Histo-App.ipynb).
 
 ### Testing
-In order to make predictions with the trained models, data frames with the paths to the single testing images and their corresponding labels were created. The predictions of the models were then added to a new column of the data frame and the data frames were stored as pickle files, after deleting unnecessary columns, in order to reduce file size. The data frames for the two models can be found in the dowloads section. After that the data frames were optimized for further processing and an additional column with a binary prediction value was added, using a threshold of 0.5.
+In order to make predictions with the trained models, data frames with the paths to the single testing images and their corresponding labels were created. The predictions of the models were then added to a new column of the data frame and the data frames were stored as pickle files, after deleting unnecessary columns, in order to reduce file size. The data frames for the two models can be found in the downloads section. After that the data frames were optimized for further processing and an additional column with a binary prediction value was added, using a threshold of 0.5.
 
 ### Results
 | Model | Sensitivity | Specitivity | False Positive Rate | ROC-AUC |
