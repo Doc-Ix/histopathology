@@ -93,7 +93,7 @@ The whole models were trained on an AWS EC2 p2.xlarge instance. In a first attem
 For detailed training logs, please see the [jupyter notebook file](https://github.com/Doc-Ix/histopathology/blob/master/Histo-App.ipynb).
 
 ### Testing
-In order to make predictions with the trained models, data frames with the paths to the single testing images and their corresponding labels were created. The predictions of the models were then added to a new column of the data frame and the data frames were stored as pickle files, after deleting unnecessary columns, in order to reduce file size. The data frames for the two models can be found in the [Downloads](#Downloads) section. After that the data frames were optimized for further processing and an additional column with a binary prediction value was added, using a threshold of 0.5.
+In order to make predictions with the trained models, data frames with the paths to the single testing images and their corresponding labels were created. The predictions of the models were then added to a new column of the data frame and the data frames were stored as pickle files, after deleting unnecessary columns, in order to reduce file size. The data frames for the two models can be found in the [Downloads](#Content_Downloads) section. After that the data frames were optimized for further processing and an additional column with a binary prediction value was added, using a threshold of 0.5.
 
 ### Results
 | Model | Sensitivity | Specitivity | False Positive Rate | ROC-AUC |
