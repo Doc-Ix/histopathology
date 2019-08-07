@@ -76,7 +76,7 @@ As a second network, an Xception model was embedded in a model structure with a 
 
 
 <img src="https://github.com/Doc-Ix/histopathology/blob/master/pictures/model_Xception.png" width="500">
-*CNN for Histopathology Data Classification, building on Xception*
+<br>*CNN for Histopathology Data Classification, building on Xception*
 
 
 ### Training
