@@ -17,7 +17,7 @@ In this repository you find the capstone project of my Machine Learning Nanodegr
 The following files can be downloaded via google drive:
 | File | Description | Link  |
 | --- | --- | --- |
-|train.zip, train_labels.csv | Original dataset and labels from kaggle challange | [Link](https://www.kaggle.com/c/histopathologic-cancer-detection/data) | 
+|train.zip, train_labels.csv | Original dataset and labels from kaggle challange | [Link](https://www.kaggle.com/c/histopathologic-cancer-detection/data) |
 | weights.best.model_Xception_full.h5 | Weights of best perfoming model, based on Xception | [Link](https://drive.google.com/file/d/16fvWFbsK1SUVJQ9b-NeTdfqrSV1ls4oD/view?usp=sharing) |
 | test_data_lables_and_prediction_NASNetmobile_full.pkl | Data frame with the true labels of the testing set as well as the prediction results of NASNetmobile, stored as pickle file. | [Link](https://drive.google.com/file/d/10QSME9fMrpoq767RcBYVKroBWKFgRCZC/view?usp=sharing) |
 | test_data_lables_and_prediction_Xception_full.pkl | Data frame with the true labels of the testing set as well as the prediction results of Xception, stored as pickle file. | [Link](https://drive.google.com/file/d/14iIfZtPijTbpQx4cND7IEvmxChyupYzZ/view?usp=sharing) |
