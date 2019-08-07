@@ -1,5 +1,5 @@
 # Histopathology
-Based on Kaggle Challenge: Histopathologic Cancer Detection
+This repositiory contains all files of my Based on Kaggle Challenge [Histopathologic Cancer Detection - Identify metastatic tissue in histopathologic scans of lymph node sections](https://www.kaggle.com/c/histopathologic-cancer-detection/overview)
 
 
 
@@ -15,6 +15,9 @@ Based on Kaggle Challenge: Histopathologic Cancer Detection
 
 
 ## Enviroment
+[Create a new Anaconda environment](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) with the necessary dependencies.
+
+`conda env create -f environment.yml`
 
 ## Downloads
 
@@ -68,14 +71,12 @@ As a second network, an Xception model was embedded in a model structure with a 
 ### Training
 The whole models were trained on an AWS EC2 p2.xlarge instance (Deep Learning AMI (Ubuntu) Version 23.1 (ami-0ab24eef0e14017ef). In a first attempt the data was stored with AWS S3, however it was hard to implement a stable streaming from S3 to the instance. In the end, the EC2 instance was provided with a larger EBS volume, in order to handle the large datasets and their processing. The training of the models was tracked and the configurations with the currently best validation results were automatically stored to dedicated folders as h5-files.
 
-For detailed training logs, please see the [jupyter notebook file]().
+For detailed training logs, please see the [jupyter notebook file](https://github.com/Doc-Ix/histopathology/blob/master/Histo-App.ipynb).
 
 ### Testing
 In order to make predictions with the trained models, data frames with the paths to the single testing images and their corresponding labels were created. The predictions of the models were then added to a new column of the data frame and the data frames were stored as pickle files, after deleting unnecessary columns, in order to reduce file size. The data frames for the two models can be found in the dowloads section. After that the data frames were optimized for further processing and an additional column with a binary prediction value was added, using a threshold of 0.5.
 
 ### Results
-
-
 | Model | Sensitivity | Specitivity | False Positive Rate | ROC-AUC |
 | --- | --- | --- | --- | --- |
 | Building on NASNetmobile | 81.06 % | 90.22 % | 9.78 % | 0.937 |
@@ -83,8 +84,10 @@ In order to make predictions with the trained models, data frames with the paths
 
 The Xception network was able to reach the goal of the project, to build a binary image classifier for histopathologic cancer detecting, reaching an AUC-value above 0.95.
 
-## License
+![ROC-AUC_Xception](https://github.com/Doc-Ix/histopathology/blob/master/pictures/ROC_Xception_full.png)
+*Plot of ROC-AUC for Xception model*
 
+## License
 This repository is under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 ## Acknowledgments
