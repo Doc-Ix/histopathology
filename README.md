@@ -88,7 +88,7 @@ As a second network, an Xception model was embedded in a model structure with a 
 
 
 ### Training
-The whole models were trained on an AWS EC2 p2.xlarge instance. In a first attempt the data was stored with AWS S3, however it was hard to implement a stable streaming from S3 to the instance. In the end, the EC2 instance was provided with a larger EBS volume, in order to handle the large datasets and their processing. The training of the models was tracked and the configurations with the currently best validation results were automatically stored to dedicated folders as h5-files.
+The whole models were trained on an AWS EC2 p2.xlarge instance. The training of the models was tracked and the configurations with the currently best validation results were automatically stored to dedicated folders as h5-files.
 
 For detailed training logs, please see the [jupyter notebook file](https://github.com/Doc-Ix/histopathology/blob/master/Histo-App.ipynb).
 
